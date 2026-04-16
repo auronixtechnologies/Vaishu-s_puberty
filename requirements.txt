@@ -2,8 +2,9 @@ fastapi
 uvicorn
 python-multipart
 deepface==0.0.79
-tensorflow-cpu==2.10.0
-numpy
+tensorflow==2.10.0
+keras==2.10.0
+numpy==1.23.5
 opencv-python-headless
 google-api-python-client
 google-auth-httplib2
