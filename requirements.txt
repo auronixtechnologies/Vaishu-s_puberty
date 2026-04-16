@@ -1,12 +1,6 @@
 fastapi
 uvicorn
-python-multipart
-deepface
-tf-keras
 numpy
 opencv-python-headless
-google-api-python-client
-google-auth-httplib2
-google-auth-oauthlib
-sqlalchemy
-psycopg2-binary
+gunicorn
+python-multipart
