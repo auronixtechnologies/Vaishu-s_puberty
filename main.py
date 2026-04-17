@@ -127,7 +127,10 @@ async def match_face(file: UploadFile = File(...)):
             db_vec  = db_vec / (np.linalg.norm(db_vec) + 1e-8)
             dist    = float(1.0 - np.dot(target_vec, db_vec))
             if dist <= THRESHOLD:
-                scored.append({"filename": os.path.basename(r["identity"]), "distance": dist})
+                # Use replace+split so Windows paths (D:\...) work on Linux too
+                raw_path = r["identity"]
+                fname = raw_path.replace("\\", "/").split("/")[-1]
+                scored.append({"filename": fname, "distance": dist})
 
         scored.sort(key=lambda x: x["distance"])
 
